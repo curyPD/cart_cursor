@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cart — E-commerce (Figma)
 
-## Getting Started
+Pixel-perfect реализация страницы **Cart** из [E-commerce Website Template (Community)](https://www.figma.com/design/cmEE8JioSGRgfL5JJlOzEZ/E-commerce-Website-Template--Freebie---Community-?node-id=202-32).
 
-First, run the development server:
+## Стек
+
+- Next.js 16 (App Router)
+- React 19
+- Tailwind CSS 4
+- Шрифты: [Satoshi](https://www.fontshare.com/fonts/satoshi) (Fontshare), [Archivo Black](https://fonts.google.com/specimen/Archivo+Black) (Google Fonts, замена Integral CF)
+
+## Запуск
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Откройте [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Адаптив:** мобильный макет 390px, двухколоночная сетка с `lg` (1024px+), плавные отступы на промежуточных ширинах.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Интерактив:** изменение количества, удаление товара, пересчёт итогов; hover/active/focus для кнопок и поля промокода.
 
-## Learn More
+> **Примечание:** в пути проекта есть кириллица (`диплом`). Turbopack может падать при сборке; в скриптах используется `--webpack`.
 
-To learn more about Next.js, take a look at the following resources:
+## Структура
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `src/app/page.tsx` — страница корзины
+- `src/components/cart/` — UI-компоненты
+- `src/lib/cart-data.ts` — данные товаров и итогов
+- `public/images/` — ассеты из Figma
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Дизайн-токены
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Токен | Значение |
+|-------|----------|
+| Фон | `#FFFFFF` |
+| Текст | `#000000` |
+| Вторичный текст | `rgba(0,0,0,0.6)` |
+| Граница | `rgba(0,0,0,0.1)` |
+| Фон карточки товара | `#F0EEED` |
+| Фон контролов | `#F0F0F0` |
+| Скидка | `#FF3333` |

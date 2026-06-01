@@ -2,25 +2,57 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
+  --text-muted: rgba(0, 0, 0, 0.6);
+  --text-placeholder: rgba(0, 0, 0, 0.4);
+  --border-subtle: rgba(0, 0, 0, 0.1);
+  --surface-product: #f0eeed;
+  --surface-control: #f0f0f0;
+  --accent-discount: #ff3333;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-muted: var(--text-muted);
+  --color-placeholder: var(--text-placeholder);
+  --color-border-subtle: var(--border-subtle);
+  --color-surface-product: var(--surface-product);
+  --color-surface-control: var(--surface-control);
+  --color-discount: var(--accent-discount);
+  --font-satoshi: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-archivo-black), ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-satoshi);
+  overflow-x: hidden;
+}
+
+@layer components {
+  .btn-icon {
+    @apply rounded-full transition-[opacity,transform,background-color] duration-150;
+    @apply hover:bg-black/5 active:scale-95 active:bg-black/10;
+    @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black;
+    @apply disabled:pointer-events-none disabled:opacity-40;
+  }
+
+  .btn-primary {
+    @apply bg-black text-white transition-[background-color,transform,opacity] duration-150;
+    @apply hover:bg-neutral-800 active:scale-[0.98] active:bg-neutral-900;
+    @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black;
+    @apply disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .input-shell {
+    @apply transition-[box-shadow,background-color] duration-150;
+    @apply focus-within:bg-white focus-within:ring-2 focus-within:ring-black/15;
+  }
+
+  .input-field {
+    @apply bg-transparent outline-none;
+    @apply focus-visible:ring-0;
+  }
 }
