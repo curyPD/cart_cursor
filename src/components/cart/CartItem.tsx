@@ -88,7 +88,7 @@ export function CartItem({
 
       {/* Desktop layout */}
       <div className="hidden min-w-0 flex-1 items-center justify-between lg:flex">
-        <div className="flex h-[118px] shrink-0 flex-col justify-between text-black">
+        <div className="flex flex-col justify-between text-black">
           <div className="flex flex-col gap-0.5">
             <h3 className="text-xl font-bold leading-normal">
               {product.title}

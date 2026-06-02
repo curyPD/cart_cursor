@@ -33,14 +33,14 @@ body {
 
 @layer components {
   .btn-icon {
-    @apply rounded-full transition-[opacity,transform,background-color] duration-150;
+    @apply rounded-full cursor-pointer transition-[opacity,transform,background-color] duration-150;
     @apply hover:bg-black/5 active:scale-95 active:bg-black/10;
     @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black;
     @apply disabled:pointer-events-none disabled:opacity-40;
   }
 
   .btn-primary {
-    @apply bg-black text-white transition-[background-color,transform,opacity] duration-150;
+    @apply bg-black cursor-pointer text-white transition-[background-color,transform,opacity] duration-150;
     @apply hover:bg-neutral-800 active:scale-[0.98] active:bg-neutral-900;
     @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black;
     @apply disabled:pointer-events-none disabled:opacity-50;

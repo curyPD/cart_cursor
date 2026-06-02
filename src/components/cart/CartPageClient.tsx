@@ -30,7 +30,7 @@ export function CartPageClient() {
     <main className="mx-auto w-full max-w-[1440px] bg-white px-4 pt-[43px] pb-10 sm:px-6 sm:pt-12 md:px-10 lg:px-12 lg:pt-14 xl:px-16 2xl:px-[100px] 2xl:pt-[58px] 2xl:pb-[78px]">
       <Breadcrumbs />
 
-      <h1 className="mt-5 font-heading text-[32px] leading-normal text-black lg:mt-6 lg:text-[40px]">
+      <h1 className="mt-5 font-heading uppercase tracking-tight text-[32px] leading-normal text-black lg:mt-6 lg:text-[40px]">
         Your cart
       </h1>
 
